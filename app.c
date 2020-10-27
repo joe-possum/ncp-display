@@ -88,6 +88,7 @@ void app_init(int argc, char *argv[])
   gettimeofday(&now,NULL);
   srand(now.tv_usec);
   set_display();
+  load_file("monkey.pbm",screen);
 }
 
 /**************************************************************************//**
@@ -113,7 +114,7 @@ void app_process_action(void)
     if(0 == rc) row += row_count;
   } else {
     set_display();
-    row = 0;
+    //row = 0;
   }
 }
 

@@ -149,6 +149,7 @@ $(SDK_DIR)/app/bluetooth/example_host/common/system/system.c \
 $(SDK_DIR)/protocol/bluetooth/src/sl_bt_ncp_host.c \
 $(SDK_DIR)/protocol/bluetooth/src/sl_bt_ncp_host_api.c \
 app.c \
+pbm.c \
 main.c
 
 # this file should be the last added
@@ -211,7 +212,7 @@ $(OBJ_DIR)/%.o: %.S
 # Link
 $(EXE_DIR)/$(PROJECTNAME): $(OBJS) $(LIBS)
 	@echo "Linking target: $@"
-	$(CC) $(LDFLAGS) $^ -o $@
+	$(CC) $(LDFLAGS) $^ -o $@ -lnetpbm
 
 
 clean:
